@@ -1,0 +1,16 @@
+the main motive of video is that how we build a super attractive and a responsive template
+with the help of only HTML and CSS.CSS has always been one of the most important parts of the
+web development, we’ve been building and improving new ways to work with it since the beginning
+of browsers. A few years ago, creating web page layouts was a very hard job. We were using some
+CSS properties such as float, positioning a lot of elements with position, and inline-block
+styling. previously we use some frameworks and bootstrap to make the template responsive and
+attractive but now with the help of Media Queries and flex and grid we can do all the stuff
+that we previously do with the help of frameworks and bootstrap there are some CSS properties
+like Media Queries where we put some max-min size for screen  to make our template responsive
+and also we have flex properties in flex we have position-relative and position-absolute and 
+some more properties that we can use to make the template responsive and look attractive.basically
+we divide our template in box pattern to simplyfied our task.
+
+when we have to use flex like if we build a navbar and some content that we want to float over the
+page so we have to use css-flex and for the box pattern like template we have to go for the CSS-grid.
+ 
