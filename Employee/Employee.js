@@ -46,30 +46,33 @@ class Employee{
     emps.getEmployee();
     
     emps.getEmployeesdata().then(() => {
-       
-    console.log(emps.datas);
-        renderTodoList(emps.datas);
+        renderTodoList(emps.datas.data);
      
     } );
 
 
 function renderTodoList(items){
 
-        const target=document.getElementById("empl");
+    const target=document.getElementById("empl");
+
+    const itemele= items.map( item  =>createEmployeeCart(item)); 
     
-        const itememl=items.forEach(element => {
-            createEmployeeCart(element);
-        });
-        
-         target.innerHTML=null;
-    
-         target.append( ...itememl);
+     target.innerHTML=null;
+
+     target.append( ...itemele);
 
 }   
 
 function createEmployeeCart(emp){
+    console.log(emp)
+
+    let main=document.getElementById("empl");
     
     const div=document.createElement("div");
+    
+    const id=document.createElement("p");
+    id.innerText=emp.id;
+     
     const name=document.createElement("p");
     name.innerText=emp.name;
 
@@ -86,8 +89,8 @@ function createEmployeeCart(emp){
     sal.innerText=emp.salary;
 
 
-    div.append(img,name,dep,gen,sal);
-    document.getElementById("empls").append(div);
+    div.append(id,img,name,dep,gen,sal);
+    main.append(div);
   
 
 }
