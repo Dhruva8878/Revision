@@ -13,7 +13,7 @@ class Employee{
     }
 
     getEmployee(){
-     fetch("https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees")
+     fetch(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=${page}&orderBy=asc`)
      .then(res =>  {
         console.log("Success");
      })
@@ -24,8 +24,9 @@ class Employee{
     }
 
 
-    getEmployeesdata(){
-    return fetch("https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees")
+    getEmployeesdata(page){
+        
+    return fetch(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=${page}&orderBy=asc`)
               .then(res => res.json())
               .then(res => {
                 this.#datas=res;
@@ -45,10 +46,84 @@ class Employee{
 
     emps.getEmployee();
     
-    emps.getEmployeesdata().then(() => {
+    emps.getEmployeesdata(1).then(() => {
         renderTodoList(emps.datas.data);
      
     } );
+
+   
+  document.getElementById("btn1").addEventListener("click", ()=>{
+
+    document.getElementById("ptag").innerText="Page 1"
+
+    emps.getEmployeesdata(1).then(() => {
+        renderTodoList(emps.datas.data);
+     
+    } );
+
+  }) 
+
+  document.getElementById("btn2").addEventListener("click", ()=>{
+
+    document.getElementById("ptag").innerText="Page 2"
+
+    emps.getEmployeesdata(2).then(() => {
+        renderTodoList(emps.datas.data);
+     
+    } );
+
+  })
+
+  document.getElementById("btn3").addEventListener("click", ()=>{
+
+    document.getElementById("ptag").innerText="Page 3"
+    emps.getEmployeesdata(3).then(() => {
+        renderTodoList(emps.datas.data);
+     
+    } );
+
+  })
+
+  document.getElementById("btn4").addEventListener("click", ()=>{
+
+    document.getElementById("ptag").innerText="Page 4"
+    emps.getEmployeesdata(4).then(() => {
+        renderTodoList(emps.datas.data);
+     
+    } );
+
+  })
+
+  document.getElementById("btn5").addEventListener("click", ()=>{
+
+    document.getElementById("ptag").innerText="Page 5"
+
+    emps.getEmployeesdata(5).then(() => {
+        renderTodoList(emps.datas.data);
+     
+    } );
+
+  })
+
+  document.getElementById("btn6").addEventListener("click", ()=>{
+
+    document.getElementById("ptag").innerText="Page 6"
+    emps.getEmployeesdata(6).then(() => {
+        renderTodoList(emps.datas.data);
+     
+    } );
+
+  })
+  document.getElementById("btn7").addEventListener("click", ()=>{
+
+    document.getElementById("ptag").innerText="Page 7"
+
+    emps.getEmployeesdata(7).then(() => {
+        renderTodoList(emps.datas.data);
+     
+    } );
+
+  })
 
 
 function renderTodoList(items){
