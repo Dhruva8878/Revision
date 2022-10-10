@@ -24,9 +24,9 @@ class Employee{
     }
 
 
-    getEmployeesdata(page){
-        
-    return fetch(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=${page}&orderBy=asc`)
+    getEmployeesdata(page,select){
+
+    return fetch(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=${page}&orderBy=${select}`)
               .then(res => res.json())
               .then(res => {
                 this.#datas=res;
@@ -45,8 +45,16 @@ class Employee{
      
 
     emps.getEmployee();
+
+    let select;
+ function update(){
+     
+    select=document.getElementById("select").value;
+    console.log(select);
+ }   
     
-    emps.getEmployeesdata(1).then(() => {
+    
+    emps.getEmployeesdata(1,select).then(() => {
         renderTodoList(emps.datas.data);
      
     } );
@@ -56,7 +64,7 @@ class Employee{
 
     document.getElementById("ptag").innerText="Page 1"
 
-    emps.getEmployeesdata(1).then(() => {
+    emps.getEmployeesdata(1,select).then(() => {
         renderTodoList(emps.datas.data);
      
     } );
@@ -67,7 +75,7 @@ class Employee{
 
     document.getElementById("ptag").innerText="Page 2"
 
-    emps.getEmployeesdata(2).then(() => {
+    emps.getEmployeesdata(2,select).then(() => {
         renderTodoList(emps.datas.data);
      
     } );
@@ -77,7 +85,7 @@ class Employee{
   document.getElementById("btn3").addEventListener("click", ()=>{
 
     document.getElementById("ptag").innerText="Page 3"
-    emps.getEmployeesdata(3).then(() => {
+    emps.getEmployeesdata(3,select).then(() => {
         renderTodoList(emps.datas.data);
      
     } );
@@ -87,7 +95,7 @@ class Employee{
   document.getElementById("btn4").addEventListener("click", ()=>{
 
     document.getElementById("ptag").innerText="Page 4"
-    emps.getEmployeesdata(4).then(() => {
+    emps.getEmployeesdata(4,select).then(() => {
         renderTodoList(emps.datas.data);
      
     } );
@@ -98,7 +106,7 @@ class Employee{
 
     document.getElementById("ptag").innerText="Page 5"
 
-    emps.getEmployeesdata(5).then(() => {
+    emps.getEmployeesdata(5,select).then(() => {
         renderTodoList(emps.datas.data);
      
     } );
@@ -108,7 +116,7 @@ class Employee{
   document.getElementById("btn6").addEventListener("click", ()=>{
 
     document.getElementById("ptag").innerText="Page 6"
-    emps.getEmployeesdata(6).then(() => {
+    emps.getEmployeesdata(6,select).then(() => {
         renderTodoList(emps.datas.data);
      
     } );
@@ -118,7 +126,7 @@ class Employee{
 
     document.getElementById("ptag").innerText="Page 7"
 
-    emps.getEmployeesdata(7).then(() => {
+    emps.getEmployeesdata(7,select).then(() => {
         renderTodoList(emps.datas.data);
      
     } );
