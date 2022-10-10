@@ -90,7 +90,7 @@ function createEmployeeCart(emp){
 
 
     div.append(id,img,name,dep,gen,sal);
-    main.append(div);
-  
 
+     
+    return div;
 }
