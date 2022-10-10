@@ -160,7 +160,7 @@ function createEmployeeCart(emp){
     name.innerText=emp.name;
 
     const img=document.createElement("img");
-    img.src=emp.image;
+    img.src=emp.image+'.png';
 
     const dep=document.createElement("p");
     dep.innerText=emp.department;
